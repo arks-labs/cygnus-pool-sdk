@@ -6,12 +6,13 @@
 | -------------- | ------------------------------------------ |
 | Cygnus-stBTC   | 0x80E3c92119DAC35b4E56346C3149D88c5D54C472 |
 | RestakingVault | 0x0Ce45dd53affbb011884EF1866E0738f58AB7969 |
+| stBTC          | 0xf6718b2701d4a6498ef77d7c152b2137ab28b8a3 |
 
 ### Deposit
 deposit stBTC to the pool and get the same amount of Cygnus-stBTC back.
-### Contract
-RestakingVault: `0x0Ce45dd53affbb011884EF1866E0738f58AB7969`
-### ABI
+
+**ABI:**
+
 ```javascript
   {
     inputs: [
@@ -25,10 +26,124 @@ RestakingVault: `0x0Ce45dd53affbb011884EF1866E0738f58AB7969`
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
-  },
+  }
 ```
 
-`amount` is your deposit amount with stBTC's decimals.
+- `amount`: the amount of stBTC to be deposited, integer with stBTC's decimals.
 
 
-### Withdraw
+### Request withdrawal
+Make an order to withdraw Cygnus-stBTC from the pool to get stBTC. 
+*(To withdraw stBTC from the pool, you need to make an request first. And you shall be able to claim it after 2~7 days.)*
+
+**ABI:**
+```javascript
+{
+  inputs: [
+    {
+      internalType: 'uint256',
+      name: 'amount',
+      type: 'uint256',
+    },
+  ],
+  name: 'requestWithdraw',
+  outputs: [],
+  stateMutability: 'nonpayable',
+  type: 'function',
+}
+```
+
+- `amount`: the amount of Cygnus-stBTC to be withdrawn, integer with stBTC's decimals.
+
+#### Get withdrawal orders
+You can check your withdrawal orders by calling the `getOrdersByOwner` function.
+
+**ABI:**
+
+```javascript
+{
+  inputs: [
+    {
+      internalType: 'address',
+      name: 'owner', // your wallet address
+      type: 'address',
+    },
+  ],
+  name: 'getOrdersByOwner',
+  outputs: [
+    {
+      components: [
+        {
+          internalType: 'uint256',
+          name: 'index', // the unique index of this order
+          type: 'uint256',
+        },
+        {
+          internalType: 'uint256',
+          name: 'amount', // the amount of stBTC to be withdrawn in this order
+          type: 'uint256',
+        },
+        {
+          internalType: 'address',
+          name: 'owner', // user wallet address of this order
+          type: 'address',
+        },
+        {
+          internalType: 'bool',
+          name: 'used', // whether this order has been claimed or not
+          type: 'bool',
+        },
+      ],
+      internalType: 'struct CygnusRestakingVault.WithdrawOrder[]',
+      name: '',
+      type: 'tuple[]',
+    },
+  ],
+  stateMutability: 'view',
+  type: 'function',
+}
+```
+
+### Claim
+Claim stBTC from the pool after your withdrawal order has been processed. Orders with index less than or equal to the max claimable index ( `maxWithdrawIndex`) can be claimed.
+
+**ABI:**
+
+```javascript
+{
+  inputs: [
+    {
+      internalType: 'uint256[]',
+      name: 'indexs',
+      type: 'uint256[]',
+    },
+  ],
+  name: 'claim',
+  outputs: [],
+  stateMutability: 'nonpayable',
+  type: 'function',
+}
+```
+
+- `indexs`: array of the indexes of your withdrawal orders, you can claim multiple orders at once.
+
+#### Check current max claimable index
+You can check the current max claimable index by calling the `maxWithdrawIndex` function. Orders with index less than or equal to this value can be claimed.
+
+**ABI:**
+
+```javascript
+{
+  inputs: [],
+  name: 'maxWithdrawIndex',
+  outputs: [
+    {
+      internalType: 'uint256',
+      name: '',
+      type: 'uint256',
+    },
+  ],
+  stateMutability: 'view',
+  type: 'function',
+}
+```
