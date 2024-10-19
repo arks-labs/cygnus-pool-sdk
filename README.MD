@@ -8,6 +8,9 @@
 | RestakingVault | 0x0Ce45dd53affbb011884EF1866E0738f58AB7969 |
 | stBTC          | 0xf6718b2701d4a6498ef77d7c152b2137ab28b8a3 |
 
+
+### Interact with RestakingVault
+RestakingVault:`0x0Ce45dd53affbb011884EF1866E0738f58AB7969` is the contract that manages the stBTC pool. You can interact with the pool by calling the following functions.
 ### Deposit
 deposit stBTC to the pool and get the same amount of Cygnus-stBTC back.
 
