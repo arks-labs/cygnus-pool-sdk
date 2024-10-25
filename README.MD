@@ -6,7 +6,14 @@
 | -------------- | ------------------------------------------ |
 | Cygnus-uBTC    | 0xf410A0d866831fbA8056abbc05a53B90757f58B1 |
 | RestakingVault | 0x7551aEa51588AaCe99B89c3FaC3CFc4108DB8094 |
-| uBTC          | 0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2 |
+| uBTC           | 0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2 |
+
+## unibtc Pool
+| Name           | Address                                    |
+| -------------- | ------------------------------------------ |
+| Cygnus-uniBTC  | 0xA558f245c93f5f7eC99E239d7Aab247985D429fD |
+| RestakingVault | 0xBc323bA4bbf2559417C3Ca47A75e2Ea341Cf8320 |
+| uniBTC         | 0x93919784C523f39CACaa98Ee0a9d96c3F32b593e |
 
 
 ## stBTC Pool
