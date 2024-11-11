@@ -24,6 +24,17 @@
 | uniBTC         | 0x93919784C523f39CACaa98Ee0a9d96c3F32b593e |
 
 
+## uobtc Pool
+### uoBTC Vault Contract
+| Name           | Address                                    |
+| -------------- | ------------------------------------------ |
+| Cygnus-uoBTC   | 0x6fc87e25C5C86E6b9FcFBA5dFf2F56964C36A1Ab |
+| RestakingVault | 0xE7ae30C03395D66F30A26C49c91edAe151747911 |
+| uoBTC          | 0xBFb4B5F54Ef69692Bb36963fA846e8855D73DBC0 |
+
+
+
+
 ## stBTC Pool
 ### Contract Address
 | Name           | Address                                    |
