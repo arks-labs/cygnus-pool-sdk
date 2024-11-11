@@ -1,5 +1,13 @@
 # Cygnus Pool SDK
 
+## Bitlayer wBTC
+### Contract Address
+| Name           | Address                                    |
+| -------------- | ------------------------------------------ |
+| Cygnus-wBTC    | 0xaA553f2E836CD0Fc9A33E7aC188d8B4fC1083395 |
+| RestakingVault | 0x1792865D493FE4DFdD504010D3c0f6da11E8046D |
+| wBTC           | 0xff204e2681a6fa0e2c3fade68a1b28fb90e4fc5f |
+
 ## ubtc Pool
 ### Contract Address
 | Name           | Address                                    |
