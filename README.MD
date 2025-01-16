@@ -2,6 +2,13 @@
 
 
 ## Bitlayer Pool
+### bfBTC
+| Name  | Address                                    |
+| ----- | ------------------------------------------ |
+| token | 0x5A5cFe27E0fc3916AaDa62b481f910b0D58f64a8 |
+| vault | 0x8243CC0c892630f499169E7E38b0d9c8B055F653 |
+| bfBTC | 0xcdfb58c8c859cb3f62ebe9cf2767f9e036c7fb15 |
+
 ## SolvBTC.m
 | Name      | Address                                    |
 | --------- | ------------------------------------------ |
